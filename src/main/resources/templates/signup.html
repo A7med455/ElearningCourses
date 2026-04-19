@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>SignUp</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/CSS/auth.css">
+</head>
+<body>
+<div class="container">
+    <fieldset>
+        <legend>SignUp</legend>
+
+        <div class="error-msg" th:if="${error}" th:text="${error}"></div>
+
+        <form action="/signup" method="post">
+
+            <div class="form-group">
+                <label for="Fname">First Name:</label>
+                <input type="text" id="Fname" name="Fname" placeholder="First Name" required autofocus>
+            </div>
+
+            <div class="form-group">
+                <label for="Lname">Last Name:</label>
+                <input type="text" id="Lname" name="Lname" placeholder="Last Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Age">Age:</label>
+                <input type="number" id="Age" name="Age" placeholder="Your Age" min="18" max="100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="yourname@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">New Password:</label>
+                <input type="password" id="password" name="password" placeholder="Your New Password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="role">Register as:</label>
+                <select id="role" name="role">
+                    <option value="STUDENT">Student</option>
+                    <option value="ADMIN">Admin</option>
+                </select>
+            </div>
+
+            <div class="form-buttons">
+                <input type="submit" value="SignUp">
+                <input type="reset" value="Reset">
+            </div>
+
+            <div class="link-section">
+                <a href="/login">Already have an account? Login</a>
+            </div>
+
+        </form>
+    </fieldset>
+</div>
+</body>
+</html>
