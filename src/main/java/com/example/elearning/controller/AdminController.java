@@ -22,7 +22,7 @@ public class AdminController {
         this.sessionUser = sessionUser;
     }
 
-    // ── DASHBOARD ──────────────────────────────────────────
+    // DASHBOARD
     // shows all courses + all users to the admin
     @GetMapping("/dashboard")
     public String showDashboard(Model model) {
@@ -31,7 +31,7 @@ public class AdminController {
         return "admin/dashboard";
     }
 
-    // ── ADD COURSE ─────────────────────────────────────────
+    // ADD COURSE
     // shows the empty add-course form
     @GetMapping("/add-course")
     public String showAddCourseForm(Model model) {
@@ -49,7 +49,7 @@ public class AdminController {
         return "redirect:/admin/dashboard";
     }
 
-    // ── EDIT COURSE ────────────────────────────────────────
+    // EDIT COURSE
     // shows the edit form pre-filled with existing course data
     @GetMapping("/edit-course/{id}")
     public String showEditCourseForm(@PathVariable Long id, Model model) {
@@ -67,7 +67,7 @@ public class AdminController {
         return "redirect:/admin/dashboard";
     }
 
-    // ── DELETE COURSE ──────────────────────────────────────
+    // DELETE COURSE
     @GetMapping("/delete-course/{id}")
     public String deleteCourse(@PathVariable Long id) {
         courseService.deleteById(id);
