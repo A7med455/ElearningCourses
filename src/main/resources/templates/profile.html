@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+
+<body>
+
+<h1>User Profile</h1>
+<hr>
+<!--insert everything here-->
+<p>Email: <span th:text="${user.email}"></span></p>
+<!--note for self: add validation in backend for email to end with '@gmail.com'-->
+<p>Name: <span th:text="${user.name}"></span></p>
+<p>Age: <span th:text="${user.age}"></span></p>
+<p>ID: <span th:text="${user.id}"></span></p>
+<!--note for self: add validation in backend for instructor to start with 'I'-->
+<p>Role:<span th:text="${user.role}"></span></p>
+
+
+
+</body>
+
+</html>
